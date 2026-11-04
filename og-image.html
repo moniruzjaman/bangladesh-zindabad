@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<style>
+    @font-face {
+        font-family: 'NotoSerifBengali';
+        src: url('assets/NotoSerifBengali-Regular.ttf') format('truetype');
+        font-weight: 100 500;
+    }
+    @font-face {
+        font-family: 'NotoSerifBengali';
+        src: url('assets/NotoSerifBengali-Bold.ttf') format('truetype');
+        font-weight: 600 900;
+    }
+    @font-face {
+        font-family: 'NotoSansBengali';
+        src: url('assets/NotoSansBengali-Regular.ttf') format('truetype');
+        font-weight: 100 500;
+    }
+    @font-face {
+        font-family: 'NotoSansBengali';
+        src: url('assets/NotoSansBengali-Bold.ttf') format('truetype');
+        font-weight: 600 900;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        width: 1200px; height: 630px; overflow: hidden;
+        font-family: 'NotoSerifBengali', serif;
+        background: linear-gradient(135deg, #0E4D33 0%, #093625 55%, #072B1D 100%);
+    }
+    /* flag disc motif */
+    .disc {
+        position: absolute; left: -70px; top: -70px;
+        width: 250px; height: 250px; border-radius: 50%;
+        background: #F42A41; opacity: 0.16;
+    }
+    .disc2 {
+        position: absolute; right: 380px; bottom: -120px;
+        width: 300px; height: 300px; border-radius: 50%;
+        background: #F42A41; opacity: 0.10;
+    }
+    .og-card {
+        position: relative; z-index: 2;
+        width: 100%; height: 100%;
+        display: flex; padding: 56px 60px; gap: 48px;
+    }
+    .og-left { flex: 1.25; display: flex; flex-direction: column; }
+    .og-tag {
+        display: inline-block; width: fit-content;
+        font-family: 'NotoSansBengali', sans-serif;
+        font-size: 15px; color: #FFD9DC; letter-spacing: 1px;
+        border: 1px solid rgba(244, 42, 65, 0.65);
+        background: rgba(244, 42, 65, 0.18);
+        padding: 6px 16px; border-radius: 999px; margin-bottom: 26px;
+    }
+    .og-title {
+        font-size: 96px; font-weight: 900; color: #FFFFFF;
+        line-height: 1.15; letter-spacing: 0.5px;
+    }
+    .og-title .red { color: #FF6B7A; }
+    .og-rule {
+        width: 130px; height: 6px; border-radius: 3px;
+        background: #F42A41; margin: 22px 0 20px 0;
+    }
+    .og-subtitle {
+        font-size: 33px; font-weight: 600; color: #B8E6C9; line-height: 1.4;
+    }
+    .og-features {
+        margin-top: auto; display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .og-feature {
+        font-family: 'NotoSansBengali', sans-serif;
+        font-size: 16px; color: #EAF7EF;
+        background: rgba(255,255,255,0.10);
+        border: 1px solid rgba(255,255,255,0.18);
+        padding: 8px 18px; border-radius: 999px;
+    }
+    .og-right {
+        flex: 1; display: flex; flex-direction: column;
+        background: rgba(255,255,255,0.055);
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 18px; padding: 30px 28px;
+    }
+    .og-right-eyebrow {
+        font-family: 'NotoSansBengali', sans-serif;
+        font-size: 13px; color: #FFD9DC; letter-spacing: 3px;
+        text-transform: uppercase; text-align: center; margin-bottom: 14px;
+    }
+    .og-right-title {
+        font-family: 'NotoSansBengali', sans-serif;
+        font-size: 25px; font-weight: 700; color: #FFFFFF;
+        text-align: center; line-height: 1.5; margin-bottom: 16px;
+    }
+    .og-quote {
+        font-size: 17px; font-style: italic; color: #D5EFE0;
+        line-height: 1.75; text-align: center;
+        padding: 16px 14px;
+        border-top: 1px solid rgba(184, 230, 201, 0.45);
+        border-bottom: 1px solid rgba(184, 230, 201, 0.45);
+        margin: 6px 0 18px 0;
+    }
+    .og-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .og-stat { text-align: center; padding: 12px 4px; background: rgba(255,255,255,0.08); border-radius: 10px; }
+    .og-stat-num {
+        font-family: 'NotoSansBengali', sans-serif;
+        font-size: 30px; font-weight: 900; color: #FF6B7A; line-height: 1.1;
+    }
+    .og-stat-label {
+        font-family: 'NotoSansBengali', sans-serif;
+        font-size: 12px; color: #D5EFE0; margin-top: 4px; letter-spacing: 1px;
+    }
+    .og-cta {
+        margin-top: auto; padding: 13px 18px; background: #F42A41; color: #FFFFFF;
+        border-radius: 10px; text-align: center;
+        font-family: 'NotoSansBengali', sans-serif;
+        font-size: 17px; font-weight: 700; letter-spacing: 1px;
+    }
+    .og-foot {
+        margin-top: 16px; display: flex; justify-content: space-between; align-items: center;
+        font-family: 'NotoSansBengali', sans-serif;
+        font-size: 13px; color: #9CCBAA;
+    }
+</style>
+</head>
+<body>
+<div class="disc"></div>
+<div class="disc2"></div>
+<div class="og-card">
+    <div class="og-left">
+        <div class="og-tag">ই-বুক · সৌজন্য ডিজিটাল সংস্করণ</div>
+        <h1 class="og-title">বাংলাদেশ<br/><span class="red">জিন্দাবাদ</span></h1>
+        <div class="og-rule"></div>
+        <p class="og-subtitle">বাংলাদেশী জাতীয়তাবাদের সহজপাঠ</p>
+        <div class="og-features">
+            <span class="og-feature">📖 পড়ুন</span>
+            <span class="og-feature">🎧 শুনুন</span>
+            <span class="og-feature">🔗 শেয়ার করুন</span>
+            <span class="og-feature">✓ বিনামূল্যে</span>
+        </div>
+    </div>
+    <div class="og-right">
+        <div class="og-right-eyebrow">এই বইয়ে যা আছে</div>
+        <div class="og-right-title">৬টি অধ্যায় · শব্দকোষ<br/>তথ্যসূত্র · অডিও</div>
+        <div class="og-quote">
+            “বাংলাদেশী জাতীয়তাবাদ কোনো উড়ে এসে জুড়ে বসা আদর্শ নয়। বরং বাংলাদেশের স্বাধীনতারও আগে থেকে এর শেকড় প্রোথিত হয়েছিল।”
+        </div>
+        <div class="og-stats">
+            <div class="og-stat">
+                <div class="og-stat-num">৬</div>
+                <div class="og-stat-label">অধ্যায়</div>
+            </div>
+            <div class="og-stat">
+                <div class="og-stat-num">১৩</div>
+                <div class="og-stat-label">পৃষ্ঠা</div>
+            </div>
+            <div class="og-stat">
+                <div class="og-stat-num">১০</div>
+                <div class="og-stat-label">শব্দকোষ</div>
+            </div>
+        </div>
+        <div class="og-cta">এখনই পড়া শুরু করুন →</div>
+        <div class="og-foot">
+            <span>সৌজন্য ডিজিটাল সংস্করণ</span>
+            <span>বাংলা · bn-BD</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

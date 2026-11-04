@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>বাংলাদেশ জিন্দাবাদ — বাংলাদেশী জাতীয়তাবাদের সহজপাঠ (মুদ্রণ সংস্করণ)</title>
+<style>
+    @font-face { font-family: 'NotoSerifBengali'; src: url('assets/NotoSerifBengali-Regular.ttf') format('truetype'); font-weight: 100 500; }
+    @font-face { font-family: 'NotoSerifBengali'; src: url('assets/NotoSerifBengali-Bold.ttf') format('truetype'); font-weight: 600 900; }
+    @font-face { font-family: 'NotoSansBengali'; src: url('assets/NotoSansBengali-Regular.ttf') format('truetype'); font-weight: 100 500; }
+    @font-face { font-family: 'NotoSansBengali'; src: url('assets/NotoSansBengali-Bold.ttf') format('truetype'); font-weight: 600 900; }
+
+    @page { size: A4; margin: 16mm 15mm 18mm 15mm; }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+        font-family: 'NotoSerifBengali', serif;
+        color: #1F2937; font-size: 11.5pt; line-height: 1.75;
+        background: #FFFFFF;
+    }
+    .sans { font-family: 'NotoSansBengali', sans-serif; }
+
+    /* ---------- Cover ---------- */
+    .cover {
+        page-break-after: always;
+        width: 178mm; height: 246mm; margin: 2mm auto 0 auto;
+        background: linear-gradient(150deg, #0E4D33 0%, #093625 60%, #072B1D 100%);
+        border-radius: 6mm; color: #fff;
+        position: relative; overflow: hidden;
+        display: flex; flex-direction: column; justify-content: center;
+        padding: 22mm 18mm;
+    }
+    .cover .disc {
+        position: absolute; width: 62mm; height: 62mm; border-radius: 50%;
+        background: #F42A41; right: 20mm; top: 18mm; opacity: 0.92;
+    }
+    .cover .disc-ghost {
+        position: absolute; width: 90mm; height: 90mm; border-radius: 50%;
+        background: #F42A41; left: -25mm; bottom: -30mm; opacity: 0.12;
+    }
+    .cover-tag {
+        font-family: 'NotoSansBengali', sans-serif; font-size: 11pt; color: #FFD9DC;
+        border: 1px solid rgba(244,42,65,.65); background: rgba(244,42,65,.18);
+        display: inline-block; width: fit-content; padding: 2.2mm 6mm; border-radius: 10mm;
+        margin-bottom: 12mm;
+    }
+    .cover-title { font-size: 46pt; font-weight: 900; line-height: 1.25; }
+    .cover-title .red { color: #FF6B7A; }
+    .cover-rule { width: 32mm; height: 2.2mm; background: #F42A41; border-radius: 2mm; margin: 8mm 0; }
+    .cover-sub { font-size: 17pt; font-weight: 600; color: #B8E6C9; line-height: 1.5; }
+    .cover-note { margin-top: 14mm; font-family: 'NotoSansBengali', sans-serif; font-size: 10pt; color: #9CCBAA; line-height: 1.8; }
+    .cover-slogan { position: absolute; bottom: 16mm; left: 18mm; font-size: 14pt; font-weight: 700; color: #fff; }
+    .cover-edition { position: absolute; bottom: 16mm; right: 18mm; font-family: 'NotoSansBengali', sans-serif; font-size: 9.5pt; color: #9CCBAA; }
+
+    /* ---------- TOC ---------- */
+    .print-toc { page-break-after: always; }
+    .toc-heading { font-family: 'NotoSansBengali', sans-serif; font-size: 20pt; font-weight: 800; color: #006A4E; margin-bottom: 8mm; }
+    .toc-list { list-style: none; }
+    .toc-list li { display: flex; align-items: baseline; gap: 4mm; padding: 3.2mm 0; border-bottom: 0.4pt dashed #C9C4B8; }
+    .toc-list .tnum { font-family: 'NotoSansBengali', sans-serif; font-weight: 800; color: #C0392B; min-width: 12mm; }
+    .toc-list .ttitle { font-weight: 700; font-size: 12.5pt; }
+    .toc-list .tsub { margin-left: auto; font-family: 'NotoSansBengali', sans-serif; font-size: 9.5pt; color: #6B7280; text-align: right; }
+    .toc-section { font-family: 'NotoSansBengali', sans-serif; font-weight: 800; font-size: 10pt; letter-spacing: 2px; color: #006A4E; margin: 6mm 0 1mm 0; border-bottom: none; }
+    .toc-section:first-child { margin-top: 0; }
+    .toc-note { margin-top: 10mm; font-size: 9.5pt; color: #6B7280; line-height: 1.7; }
+
+    /* ---------- Chapters ---------- */
+    section.chapter { page-break-before: always; }
+    section.chapter.no-break { page-break-before: auto; }
+    .ch-num {
+        font-family: 'NotoSansBengali', sans-serif; font-size: 10pt; font-weight: 700;
+        letter-spacing: 2.5px; color: #C0392B; text-transform: uppercase; margin-bottom: 2mm;
+    }
+    .ch-title { font-family: 'NotoSansBengali', sans-serif; font-size: 22pt; font-weight: 800; color: #14532D; line-height: 1.4; }
+    .ch-sub { font-family: 'NotoSansBengali', sans-serif; font-size: 11pt; color: #6B7280; margin: 1.5mm 0 5mm 0; }
+    .ch-rule { width: 24mm; height: 1.4mm; background: #F42A41; border-radius: 1mm; margin-bottom: 6mm; }
+    .epigraph {
+        margin: 0 0 7mm 0; padding: 4mm 6mm;
+        font-size: 10.5pt; font-style: normal; line-height: 1.9; color: #4B5563;
+        text-align: right; border-right: 1mm solid #C0392B; background: #FBFAF6;
+    }
+    p { margin: 0 0 4mm 0; text-align: justify; }
+    p.lead-para { font-size: 12.5pt; color: #111827; }
+    .speech-quote {
+        margin: 5mm 0; padding: 5mm 7mm; background: #F6F3EC;
+        border-left: 1.2mm solid #C0392B; border-radius: 0 2mm 2mm 0;
+        font-size: 11pt; font-style: normal; line-height: 1.85;
+    }
+    .speech-quote .sq-src, .pull-quote .pq-src {
+        display: block; margin-top: 2.5mm; font-family: 'NotoSansBengali', sans-serif;
+        font-size: 9.5pt; font-weight: 700; color: #C0392B;
+    }
+    .pull-quote {
+        margin: 6mm 4mm; padding: 4mm 2mm; text-align: center;
+        border-top: 0.7pt solid #14532D; border-bottom: 0.7pt solid #14532D;
+        font-size: 12.5pt; font-weight: 600; color: #14532D; line-height: 1.8;
+    }
+    .callout {
+        margin: 5mm 0; padding: 4.5mm 6mm; background: #EFF7F2;
+        border: 0.5pt solid #B8DFC9; border-radius: 2mm;
+    }
+    .callout-label {
+        display: block; font-family: 'NotoSansBengali', sans-serif;
+        font-size: 9.5pt; font-weight: 800; letter-spacing: 1.5px; color: #006A4E; margin-bottom: 1.5mm;
+    }
+    ul.bn-bullets { margin: 3mm 0 4mm 8mm; }
+    ul.bn-bullets li { margin-bottom: 1.6mm; }
+    ul.glossary-list { list-style: none; margin-top: 2mm; }
+    ul.glossary-list li { padding: 3mm 0; border-bottom: 0.4pt dashed #C9C4B8; page-break-inside: avoid; }
+    ul.glossary-list .term { display: block; font-family: 'NotoSansBengali', sans-serif; font-weight: 800; font-size: 11.5pt; color: #14532D; margin-bottom: 1mm; }
+    ul.glossary-list .def { display: block; font-size: 10.5pt; line-height: 1.75; }
+    ul.resource-list { list-style: none; margin-top: 2mm; }
+    ul.resource-list li { background: #F6F3EC; border-left: 1mm solid #C0392B; padding: 3.5mm 5mm; margin-bottom: 3mm; border-radius: 0 2mm 2mm 0; page-break-inside: avoid; }
+    ul.resource-list .rtype { display: block; font-family: 'NotoSansBengali', sans-serif; font-size: 8.5pt; font-weight: 800; letter-spacing: 2px; color: #C0392B; margin-bottom: 1mm; }
+    ul.resource-list .rtitle { display: block; font-family: 'NotoSansBengali', sans-serif; font-weight: 700; font-size: 11pt; }
+    ul.resource-list .rdesc { display: block; font-size: 9.5pt; color: #4B5563; margin-top: 0.8mm; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 4mm 0; }
+    .about-card { background: #F6F3EC; border: 0.5pt solid #DDD8CC; border-radius: 2mm; padding: 4mm 5mm; page-break-inside: avoid; }
+    .about-card .atitle { font-family: 'NotoSansBengali', sans-serif; font-size: 9.5pt; font-weight: 800; letter-spacing: 1px; color: #006A4E; margin-bottom: 1.6mm; }
+    .about-card .abody { font-size: 9.8pt; line-height: 1.75; }
+    .book-line { margin: 8mm 0 4mm; text-align: center; font-family: 'NotoSansBengali', sans-serif; font-weight: 800; font-size: 20pt; color: #C0392B; }
+    .courtesy { margin-top: 8mm; padding: 4mm 5mm; background: #FBFAF6; border: 0.5pt solid #DDD8CC; border-radius: 2mm; font-size: 9pt; color: #6B7280; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+    <div class="disc"></div>
+    <div class="disc-ghost"></div>
+    <div class="cover-tag">ই-বুক · সৌজন্য ডিজিটাল সংস্করণ</div>
+    <div class="cover-title">বাংলাদেশ<br><span class="red">জিন্দাবাদ</span></div>
+    <div class="cover-rule"></div>
+    <div class="cover-sub">বাংলাদেশী জাতীয়তাবাদের সহজপাঠ</div>
+    <div class="cover-note">৬টি অধ্যায় · শব্দকোষ · তথ্যসূত্র<br>মূল পুস্তিকার (৩য় সংস্করণ) পাঠ্য অবলম্বনে</div>
+    <div class="cover-slogan">বাংলাদেশ জিন্দাবাদ।</div>
+    <div class="cover-edition">সম্পূর্ণ বই · বিনামূল্যে · bn-BD</div>
+</div>
+
+<!-- TOC (populated from EBOOK_TOC by script) -->
+<div class="print-toc">
+    <div class="toc-heading sans">সূচিপত্র</div>
+    <ul class="toc-list" id="printToc"></ul>
+    <div class="toc-note">এই সংস্করণটি মূল পুস্তিকা “বাংলাদেশ জিন্দাবাদ — বাংলাদেশী জাতীয়তাবাদের সহজপাঠ” (৩য় সংস্করণ)-এর স্ক্যান থেকে প্রতিলিপি; স্পষ্ট মুদ্রণ-ত্রুটি ও বানান সংশোধিত, অর্থ অপরিবর্তিত। মূল প্রকাশনার সব স্বত্ব সংশ্লিষ্ট মালিকদের। ওয়েব সংস্করণ: এই রিপোর <b>index.html</b> — পড়া, শোনা ও শেয়ারের সুবিধাসহ।</div>
+</div>
+
+<!-- Chapters (populated from EBOOK_CONTENT by script) -->
+<div id="printRoot"></div>
+
+<script src="js/content.js"></script>
+<script>
+    (function () {
+        // TOC
+        var toc = document.getElementById('printToc');
+        var tocHtml = [];
+        for (const item of EBOOK_TOC) {
+            if (item.section) {
+                tocHtml.push('<li class="toc-section">' + item.section + '</li>');
+            } else {
+                tocHtml.push('<li><span class="tnum">' + item.num + '</span>' +
+                    '<span class="ttitle">' + item.title + '</span>' +
+                    '<span class="tsub">' + item.sub + '</span></li>');
+            }
+        }
+        toc.innerHTML = tocHtml.join('');
+
+        // Chapters + supplementary sections
+        var root = document.getElementById('printRoot');
+        var html = [];
+        var sections = EBOOK_CONTENT.chapters.concat([EBOOK_CONTENT.glossary, EBOOK_CONTENT.resources, EBOOK_CONTENT.about]);
+        sections.forEach(function (ch, idx) {
+            html.push('<section class="chapter' + (idx === 0 ? ' no-break' : '') + '" id="' + ch.id + '">');
+            html.push('<div class="ch-num">' + ch.numLabel + '</div>');
+            html.push('<h2 class="ch-title">' + ch.title + '</h2>');
+            if (ch.subtitle) html.push('<div class="ch-sub">' + ch.subtitle + '</div>');
+            html.push('<div class="ch-rule"></div>');
+            if (ch.epigraph) html.push('<div class="epigraph">' + ch.epigraph + '</div>');
+            html.push(ch.html);
+            // courtesy note at the very end
+            if (ch.id === 'about') {
+                html.push('<div class="courtesy">সৌজন্য ডিজিটাল সংস্করণ — শুধুমাত্র পাঠ, শ্রবণ ও অবাণিজ্যিক শেয়ারের জন্য। মূল পুস্তিকার স্ক্যান সংরক্ষিত: source/original-booklet.pdf · ফন্ট: Noto Serif Bengali ও Noto Sans Bengali (Google Noto, OFL)।</div>');
+            }
+            html.push('</section>');
+        });
+        root.innerHTML = html.join('');
+        document.title = 'বাংলাদেশ জিন্দাবাদ — মুদ্রণ সংস্করণ';
+    })();
+</script>
+</body>
+</html>
