@@ -156,6 +156,7 @@ const EBOOK_CONTENT = {
   <li><span class="rtype">সাক্ষাৎকার</span><span class="rtitle">“দেশের জন্য সব হারালাম, কী পেলাম?”</span><span class="rdesc">হোসেন, সোহরাব (২০১৯)। প্রথম আলো।</span></li>
   <li><span class="rtype">সংবাদ</span><span class="rtitle">“উড়ল বাংলাদেশের মানচিত্রখচিত পতাকা”</span><span class="rdesc">যুগান্তর (২০১৯)।</span></li>
   <li><span class="rtype">পিডিএফ</span><span class="rtitle">মুদ্রণ-উপযোগী ই-বুক</span><span class="rdesc">এই ই-বুকের ছাপার সংস্করণ: <a href="bangladesh-zindabad-ebook.pdf">bangladesh-zindabad-ebook.pdf</a></span></li>
+  <li><span class="rtype">মূল স্ক্যান</span><span class="rtitle">মূল পুস্তিকার স্ক্যান — বিএনপি ওয়েবসাইট</span><span class="rdesc">সৌজন্যে বাংলাদেশ জাতীয়তাবাদী দল (বিএনপি): <a href="https://api.bnpbd.org/api/upload/files/bangladesh-zindabad-3ed6db.pdf" target="_blank" rel="noopener">api.bnpbd.org/api/upload/files/bangladesh-zindabad-3ed6db.pdf</a></span></li>
 </ul>`
     },
 
@@ -165,11 +166,12 @@ const EBOOK_CONTENT = {
         title: 'এই সংস্করণ সম্পর্কে',
         subtitle: 'স্বীকৃতি ও বিনামূল্যে বিতরণ',
         html: `
-<p class="lead-para">এই ই-বুকটি মূল পুস্তিকা <strong>“বাংলাদেশ জিন্দাবাদ — বাংলাদেশী জাতীয়তাবাদের সহজপাঠ”</strong>-এর পাঠ-প্রতিলিপি অবলম্বনে নির্মিত একটি ডিজিটাল সংস্করণ।</p>
+<p class="lead-para">এই ই-বুকটি মূল পুস্তিকা <strong>“বাংলাদেশ জিন্দাবাদ — বাংলাদেশী জাতীয়তাবাদের সহজপাঠ”</strong>-এর পাঠ-প্রতিলিপি অবলম্বনে নির্মিত একটি ডিজিটাল সংস্করণ। মূল পুস্তিকার স্ক্যান সৌজন্যে পাওয়া যায় বাংলাদেশ জাতীয়তাবাদী দল (বিএনপি)-র অফিশিয়াল ওয়েবসাইটে — <a href="https://api.bnpbd.org/api/upload/files/bangladesh-zindabad-3ed6db.pdf" target="_blank" rel="noopener">মূল পিডিএফ (bnpbd.org)</a>।</p>
 <div class="about-grid">
-  <div class="about-card"><div class="atitle">স্বীকৃতি</div><div class="abody">মূল রচনার সব স্বত্ব সংশ্লিষ্ট লেখক ও প্রকাশকের। এই ডিজিটাল সংস্করণটি শুধুমাত্র সহজে পড়া, শোনা ও শেয়ার করার সুবিধার জন্য; কোনো বাণিজ্যিক উদ্দেশ্যে নয়।</div></div>
+  <div class="about-card"><div class="atitle">স্বীকৃতি</div><div class="abody">মূল রচনার সব স্বত্ব সংশ্লিষ্ট লেখক ও প্রকাশকের। এই ডিজিটাল সংস্করণটি শুধুমাত্র সহজে পড়া, শোনা ও শেয়ার করার সুবিধার জন্য; কোনো বাণিজ্যিক উদ্দেশ্যে নয়। এটি মূল পুস্তিকার কোনো নতুন রচনা নয়।</div></div>
+  <div class="about-card"><div class="atitle">সৌজন্য ও কৃতজ্যতা</div><div class="abody">মূল পুস্তিকার স্ক্যান প্রাপ্তি ও প্রকাশে <strong>বাংলাদেশ জাতীয়তাবাদী দল (বিএনপি)</strong>-এর অফিশিয়াল ওয়েবসাইট <a href="https://bnpbd.org" target="_blank" rel="noopener">bnpbd.org</a> এবং দলের নেতৃবৃন্দের প্রতি আন্তরিক সৌজন্য ও কৃতজ্যতা। মূল পিডিএফ: <a href="https://api.bnpbd.org/api/upload/files/bangladesh-zindabad-3ed6db.pdf" target="_blank" rel="noopener">api.bnpbd.org/api/upload/files/bangladesh-zindabad-3ed6db.pdf</a>।</div></div>
   <div class="about-card"><div class="atitle">পাঠ্য প্রস্তুতি</div><div class="abody">মূল পুস্তিকার স্ক্যান থেকে পাঠ্য উদ্ধার করে (ওসিআর) বানান ও যতিচিহ্ন শুধরে নেয়া হয়েছে; শব্দচয়ন ও বক্তব্য অপরিবর্তিত রাখা হয়েছে। মূল ছাপার অস্পষ্টতার জায়গায় প্রসঙ্গ অনুযায়ী পাঠ নির্ধারণ করা হয়েছে।</div></div>
-  <div class="about-card"><div class="atitle">মূল পুস্তিকা</div><div class="abody">প্রচ্ছদ ও শিরোনাম পৃষ্ঠায় লেখক বা প্রকাশকের নাম ছাপা নেই। মূল লেখক ও প্রকাশকের তথ্য হাতে আসলে এখানে যুক্ত করা হবে। এই সংস্করণটি মূল পুস্তিকার (৩য় সংস্করণ) ১৩ পৃষ্ঠার পাঠ্য অন্তর্ভুক্ত করেছে।</div></div>
+  <div class="about-card"><div class="atitle">মূল পুস্তিকা</div><div class="abody">প্রচ্ছদ ও শিরোনাম পৃষ্ঠায় লেখক বা প্রকাশকের নাম ছাপা নেই। মূল লেখক ও প্রকাশকের তথ্য হাতে আসলে এখানে যুক্ত করা হবে। এই সংস্করণটি মূল পুস্তিকার (৩য় সংস্করণ) ১৩ পৃষ্ঠার পাঠ্য অন্তর্ভুক্ত করেছে; অক্ষত স্ক্যান উপরের মূল পিডিএফ লিঙ্কে এবং এই রিপোর <a href="https://github.com/moniruzjaman/bangladesh-zindabad/blob/main/source/original-booklet.pdf" target="_blank" rel="noopener">source/original-booklet.pdf</a>-এ সংরক্ষিত।</div></div>
   <div class="about-card"><div class="atitle">ব্যবহারের শর্ত</div><div class="abody">বিনামূল্যে পড়ুন, শুনুন ও শেয়ার করুন। শেয়ার করার সময় পাঠ্য অবিকৃত রাখুন এবং উৎস হিসেবে মূল পুস্তিকার নাম উল্লেখ করুন।</div></div>
 </div>`
     }

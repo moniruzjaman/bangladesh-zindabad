@@ -9,7 +9,8 @@
     const SHARE = {
         url:   SITE_URL,
         title: 'বাংলাদেশ জিন্দাবাদ — মূল পুস্তিকার সৌজন্য ই-বুক সংস্করণ',
-        text:  'মূল মুদ্রিত পুস্তিকার পাঠোপযোগী ডিজিটাল সংস্করণ — সম্পূর্ণ বই পড়ুন, শুনুন, শেয়ার করুন। স্বত্ব মূল লেখক ও প্রকাশকের; ই-বুক রূপান্তর একটি সৌজন্য ডিজিটাল উদ্যোগ।',
+        text:  'মূল মুদ্রিত পুস্তিকার পাঠোপযোগী ডিজিটাল সংস্করণ — পড়ুন, শুনুন, শেয়ার করুন। মূল পিডিএফ: https://api.bnpbd.org/api/upload/files/bangladesh-zindabad-3ed6db.pdf । সৌজন্য ও কৃতজ্যতা: বাংলাদেশ জাতীয়তাবাদী দল (বিএনপি) — bnpbd.org ও দলের নেতৃবৃন্দ। স্বত্ব মূল লেখক ও প্রকাশকের।',
+        textShort: 'মূল পুস্তিকার ই-বুক সংস্করণ। সৌজন্য: বিএনপি (bnpbd.org) ও দলের নেতৃবৃন্দ।',
         hashtags: ['বাংলাদেশ', 'বাংলাদেশীজাতীয়তাবাদ', 'জিয়াউররহমান', 'বিএনপি', 'Bangladesh', 'BangladeshiNationalism'],
 
         buildUrl(platform) {
@@ -30,7 +31,7 @@
                 case 'linkedin':
                     return `https://www.linkedin.com/sharing/share-offsite/?url=${u}`;
                 case 'twitter':
-                    return `https://twitter.com/intent/tweet?url=${u}&text=${encodeURIComponent(this.title + ' — ' + this.text)}&hashtags=${ht}`;
+                    return `https://twitter.com/intent/tweet?url=${u}&text=${encodeURIComponent(this.title + ' — ' + (this.textShort || this.text))}&hashtags=${ht}`;
                 case 'telegram':
                     return `https://t.me/share/url?url=${u}&text=${encodeURIComponent(this.title)}`;
                 case 'email':
