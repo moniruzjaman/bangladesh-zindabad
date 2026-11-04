@@ -68,6 +68,7 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reader.css">
+<link rel="stylesheet" href="css/extras.css">
 
 <!-- ============================================================
      JSON-LD Structured Data — Book schema for Google/Rich Snippets
@@ -144,6 +145,12 @@
     </button>
     <button class="icon-btn" id="btnShare" aria-label="শেয়ার করুন" title="শেয়ার করুন">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    </button>
+    <button class="icon-btn" id="btnQuote" aria-label="উক্তি কার্ড" title="উক্তি কার্ড তৈরি করুন">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10.1 7.3c-3.2.5-5.6 3.2-5.6 6.6V17h5.6v-6.4H7.3c.6-1.4 1.8-2.4 3.3-2.8l-.5-.5zm9.4 0c-3.2.5-5.6 3.2-5.6 6.6V17h5.6v-6.4h-2.8c.6-1.4 1.8-2.4 3.3-2.8l-.5-.5z"/></svg>
+    </button>
+    <button class="icon-btn" id="btnJournal" aria-label="পাঠকের নোটবুক" title="পাঠকের নোটবুক ও বুকমার্ক">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9.5" y1="7" x2="15.5" y2="7"/></svg>
     </button>
     <button class="icon-btn" id="btnSettings" aria-label="সেটিংস" title="পড়ার সেটিংস">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -324,6 +331,93 @@
 </div>
 
 <!-- ============================================================
+     QUOTE CARD MODAL — উক্তি কার্ড (1200×675 PNG, ৫ থিম)
+     ============================================================ -->
+<div class="share-modal" id="quoteModal">
+  <div class="share-modal-content">
+    <div class="share-modal-header">
+      <h2 class="share-modal-title">উক্তি কার্ড তৈরি করুন</h2>
+      <button class="icon-btn share-close" id="btnCloseQuote" aria-label="বন্ধ করুন">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="qc-body">
+      <label class="qc-label" for="qcText">বইয়ের যেকোনো স্মরণীয় উক্তি বা পছন্দের অনুচ্ছেদ লিখুন / পাঠ্য নির্বাচন করুন</label>
+      <textarea id="qcText" class="qc-text" maxlength="600" placeholder="উক্তি এখানে লিখুন, অথবা বইয়ের কোনো অংশ নির্বাচন করে ভাসমান ‘কার্ড বানান’ বোতাম চাপুন…"></textarea>
+      <div class="qc-presets">
+        <button type="button" class="qc-preset" data-quote="আমাদের স্বাধীনতা কারো দয়ার দান নয়, আমাদের অর্জন।">আমাদের স্বাধীনতা কারো দয়ার দান নয়…</button>
+        <button type="button" class="qc-preset" data-quote="স্বাধীনতাকে সুদৃঢ় রাখা এবং স্বাধীনতাকে অর্থবহ করে তোলা — এই দুটোই আমাদের অবশ্যকরণীয়।">সুদৃঢ় ও অর্থবহ স্বাধীনতা…</button>
+        <button type="button" class="qc-preset" data-quote="এক দফা — বাংলাদেশ স্বাধীন চাই।">এক দফা — বাংলাদেশ স্বাধীন চাই</button>
+      </div>
+
+      <label class="qc-label">নান্দনিক থিম</label>
+      <div class="qc-themes">
+        <button type="button" class="qc-theme" data-qtheme="dark-green"><span class="qc-swatch" data-qtheme="dark-green"></span>গাঢ় সবুজ</button>
+        <button type="button" class="qc-theme" data-qtheme="golden-doc"><span class="qc-swatch" data-qtheme="golden-doc"></span>সোনালি নথি</button>
+        <button type="button" class="qc-theme" data-qtheme="crimson"><span class="qc-swatch" data-qtheme="crimson"></span>রক্তিম সংস্কার</button>
+        <button type="button" class="qc-theme" data-qtheme="cream-paper"><span class="qc-swatch" data-qtheme="cream-paper"></span>ক্রিম কাগজ</button>
+        <button type="button" class="qc-theme" data-qtheme="moonless"><span class="qc-swatch" data-qtheme="moonless"></span>অমাবস্যার রাত</button>
+      </div>
+
+      <label class="qc-label">প্রিভিউ (1200×675 হাই-রেজোলিউশন PNG)</label>
+      <canvas id="qcCanvas" width="1200" height="675" class="qc-preview"></canvas>
+
+      <div class="qc-actions">
+        <button type="button" class="qc-btn" id="qcDownload">⬇ PNG ডাউনলোড</button>
+        <button type="button" class="qc-btn ghost" id="qcCopy">📋 টেক্সট কপি</button>
+      </div>
+
+      <div class="qc-share-grid">
+        <button type="button" class="qc-share qs-whatsapp" data-qshare="whatsapp">WhatsApp</button>
+        <button type="button" class="qc-share qs-facebook" data-qshare="facebook">Facebook</button>
+        <button type="button" class="qc-share qs-twitter" data-qshare="twitter">X / Twitter</button>
+        <button type="button" class="qc-share qs-telegram" data-qshare="telegram">Telegram</button>
+        <button type="button" class="qc-share qs-native" data-qshare="native" id="qcNative">আরও…</button>
+      </div>
+
+      <div class="qc-foot-note">
+        কার্ডের নিচে বইয়ের নাম ও সাইটের ঠিকানা স্বয়ংক্রিয়ভাবে যুক্ত হয়। ছবিটি ডাউনলোড করে সরাসরি পোস্ট করতে পারেন; মোবাইলে ‘আরও…’ দিয়ে সাপোর্ট থাকলে ছবিসহ শেয়ার হবে।
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     READER'S JOURNAL MODAL — নোটবুক ও বুকমার্কিং
+     ============================================================ -->
+<div class="share-modal" id="journalModal">
+  <div class="share-modal-content">
+    <div class="share-modal-header">
+      <h2 class="share-modal-title">📓 পাঠকের নোটবুক ও বুকমার্ক</h2>
+      <button class="icon-btn share-close" id="btnCloseJournal" aria-label="বন্ধ করুন">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="jm-body">
+      <div class="jm-toolbar">
+        <button type="button" class="jm-tbtn" id="jmExport">⬇ সব নোট এক্সপোর্ট (.txt)</button>
+        <button type="button" class="jm-tbtn ghost" id="jmCopyAll">📋 সব নোট কপি</button>
+        <button type="button" class="jm-tbtn danger" id="jmClearAll">সব মুছুন</button>
+        <span id="jmFlash"></span>
+      </div>
+
+      <div class="jm-section-title">🔖 বুকমার্ক করা অধ্যায়</div>
+      <div class="jm-bookmarks" id="jmBookmarks"></div>
+
+      <div class="jm-section-title">✍️ অধ্যায়ভিত্তিক নোট</div>
+      <div id="jmNotesList"></div>
+
+      <div class="jm-privacy">
+        নোট ও বুকমার্ক শুধু আপনার এই ডিভাইসের ব্রাউজারে (localStorage) সংরক্ষিত থাকে — কোনো সার্ভারে যায় না। ব্রাউজারের ডেটা মুছলে নোটও মুছে যাবে; তাই গুরুত্বপূর্ণ নোট মাঝে মাঝে এক্সপোর্ট করে রাখুন।
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating selection → quote card button -->
+<button class="sel-quote-btn" id="selQuoteBtn" type="button">✒️ কার্ড বানান</button>
+
+<!-- ============================================================
      READER VIEW (single page, scroll-based)
      ============================================================ -->
 <main class="reader" id="reader">
@@ -400,6 +494,8 @@
 <script src="js/tts.js" defer></script>
 <script src="js/share.js" defer></script>
 <script src="js/reader.js" defer></script>
+<script src="js/journal.js" defer></script>
+<script src="js/quotecard.js" defer></script>
 
 </body>
 </html>
