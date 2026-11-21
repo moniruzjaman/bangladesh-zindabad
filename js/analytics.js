@@ -1,6 +1,6 @@
 /* ============================================================
    Analytics — Google Analytics 4 event tracking
-   ID: (unset — set GA_ID below to enable)
+   ID: G-1CC10NJ1YN
    Tracks: page_view, chapter_read, reading_progress,
            tts_play, tts_pause, tts_complete,
            share_click, share_complete,
@@ -10,7 +10,7 @@
    ============================================================ */
 
 (function () {
-    const GA_ID = ''; // ← এখানে আপনার GA4 আইডি বসান (যেমন 'G-XXXXXXXXXX'); খালি থাকলে অ্যানালিটিক্স লোড হবে না
+    const GA_ID = 'G-1CC10NJ1YN'; // GA4 মেজারমেন্ট আইডি — অ্যানালিটিক্স সক্রিয়
 
     // ── Load GA4 script ────────────────────────────────────────
     function loadGA() {
